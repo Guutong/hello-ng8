@@ -10,7 +10,7 @@ import * as moment from 'moment';
   providedIn: 'root'
 })
 export class TodoService {
-  private BASE_URL = 'http://5e3975d9aad2220014962951.mockapi.io';
+  private BASE_URL = 'https://5e3975d9aad2220014962951.mockapi.io';
   constructor(private http: HttpClient) { }
 
   getAllTodo(): Observable<Todo[]> {
