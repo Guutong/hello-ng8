@@ -1,0 +1,20 @@
+<div class="row p-2 m-2">
+  <form [formGroup]="todoForm" (submit)="onSubmit()">
+    <div class="form-group">
+      <label for="txtTitle">Title</label>
+      <input class="input-group" id="txtTitle" type="text" formControlName="title"/>
+      <label for="txtDescription">Description</label>
+      <input class="input-group" id="txtDescription" type="text" formControlName="description"/>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="todoForm.invalid">Add</button>
+  </form>
+</div>
+<div class="row p-4 m-4" *ngFor="let todo of (todos$ | async)" style="box-shadow: 0px 0px 3px 0px #aaaaaa; border-radius: 4px;" routerLink="/todo/{{todo.id}}">
+  <div class="col-12">
+    <h5>{{todo.title}}</h5>
+    <span>🕐{{ todo.createdAt | fromNow }}</span>
+  </div>
+  <div class="col-12 mt-2">
+    {{todo.description}}
+  </div>
+</div>

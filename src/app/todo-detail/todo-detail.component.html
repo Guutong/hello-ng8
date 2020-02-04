@@ -1,0 +1,9 @@
+<div *ngIf="todo" class="row p-4 m-4" style="box-shadow: 0px 0px 3px 0px #aaaaaa; border-radius: 4px;">
+  <div class="col-12">
+    <h5>{{todo.title}}</h5>
+    <span>🕐{{ todo.createdAt | fromNow }}</span>
+  </div>
+  <div class="col-12 mt-2">
+    {{todo.description}}
+  </div>
+</div>
